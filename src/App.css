@@ -1,38 +1,150 @@
+:root {
+  --blue: #5763e3
+}
+
 .App {
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.cards__abs {
+  position: absolute;
+  inset: 0;
+}
+
+.card {
+  border: 2px solid var(--blue);
+  max-width: 250px;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 10;
+}
+
+.card__header {
+  position: relative;
+}
+
+.card__header--abs {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.card__delete {
+  position: absolute;
+  color: white;
+  display: grid;
+  place-content: center;
+  font-size: 12px;
+  padding: 2px;
+  top: 8px;
+  right: 10px;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.card__number {
+  background-color: var(--blue);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 6px;
+}
+
+.card__input {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.card__input--container {
+  background-color: white;
+  height: 100%;
+}
+
+.columns {
+  min-height: 100vh;
+  display: flex;
+}
+
+.columns__sidebar {
+  background-color: var(--blue);
+  min-height: inherit;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.columns__sidebar--title {
+  color: white;
+  transform: rotate(-90deg);
+  font-size: 28px;
+  text-wrap: nowrap; 
+}
+
+.columns__sections {
+  width: 100%;
+  margin: 20px 28px;
+}
+
+.columns__section {
+  display: grid; 
+  grid-template-columns: 80px auto 43%; 
+  justify-items: center;
+}
+
+.columns__section--top {
+  min-height: 10%;
+}
+
+.columns__section--content{
+  width: 100%;
+  padding: 14px ;
+}
+
+.columns__section:not(:last-child) {
+  border-bottom: 2px solid var(--blue);
+}
+
+.columns__section--content:not(:first-child) {
+  border-left: 2px solid var(--blue);
+}
+
+.columns__section--content-top {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.columns__section--header {
+  color: var(--blue);
+  font-size: 28px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.columns__section--big {
+  height: 45%;
+  min-height: 300px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.columns__section--header-left {
+ transform: rotate(-90deg); 
+}
+
+.columns__section--content-left {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-wrap: nowrap;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.columns__section--inside {
+  font-size: 20px;
+  color: black;
 }
