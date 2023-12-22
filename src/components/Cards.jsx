@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 const Cards = () => {
     const [cards, setCards] = useState(JSON.parse(localStorage.getItem('cards')) || []);
-    const [id, setId] = useState(1);
     // const [zIndex, setZIndex] = useState(1);
     // Get cards from local storage
     useEffect(() => {
@@ -23,8 +22,7 @@ const Cards = () => {
         const offsetX = (e.nativeEvent.clientX / window.innerWidth) * 100
         const offsetY = e.nativeEvent.clientY;
         
-        setCards([...cards, {id: id, cardInput: "", isDragging: false, position: { x: offsetX, y: offsetY } }])
-        setId(id+1)
+        setCards([...cards, { cardInput: "", isDragging: false, position: { x: offsetX, y: offsetY } }])
     }
 
     const inputHandler = (e, i) => {
@@ -79,7 +77,7 @@ const Cards = () => {
                     style={{ left: `${card.position.x}%`, top: `${card.position.y}px` }}
                 >
                     <div className='card__header'>
-                        <h2 className='card__number'>Card {card.id}</h2>
+                        <h2 className='card__number'>Card {i + 1}</h2>
                         <div
                             className='card__header--abs'
                             onMouseDown={e => mouseDown(e, i)}
