@@ -11,6 +11,7 @@
 .cards__abs {
   position: absolute;
   inset: 0;
+  cursor: pointer;
 }
 
 .card {
