@@ -1,4 +1,5 @@
 import React from 'react'
+import Links from './Links'
 
 const Columns = ({ createCard }) => {
     return (
@@ -18,7 +19,7 @@ const Columns = ({ createCard }) => {
                 </div>
                 <div className='columns__section columns__section--big columns__section--middle'>
                     <div className='columns__section--content columns__section--content-left'>
-                    <h2 className='columns__section--header  columns__section--header-left'>Important</h2>
+                        <h2 className='columns__section--header  columns__section--header-left'>Important</h2>
                     </div>
                     <div className='columns__section--content columns__section--header'>
                         <h2 className='columns__section--inside'>Do it first</h2>
@@ -29,7 +30,7 @@ const Columns = ({ createCard }) => {
                 </div>
                 <div className='columns__section columns__section--big'>
                     <div className='columns__section--content columns__section--content-left'>
-                    <h2 className='columns__section--header columns__section--header-left'>Not important</h2>
+                        <h2 className='columns__section--header columns__section--header-left'>Not important</h2>
                     </div>
                     <div className='columns__section--content columns__section--header'>
                         <h2 className='columns__section--inside'>Delegate it</h2>
@@ -39,6 +40,7 @@ const Columns = ({ createCard }) => {
                     </div>
                 </div>
             </div>
+            <Links />
         </div>
     )
 }
